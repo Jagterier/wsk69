@@ -7,6 +7,10 @@ import javax.swing.border.TitledBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Writer;
 
 public class Szyfrowanie {
     private JPanel pMain;
@@ -18,17 +22,43 @@ public class Szyfrowanie {
     private JLabel wpiszSzyfrLabel;
     private JLabel twójZaszyfrowanyTekstLabel;
     private JLabel wpiszTekstLabel;
-
+    private String ukryty;
 
     public Szyfrowanie() {
         btnSZyfr.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String kluczWartosc = textSzyfr.getText();
-                int kluczLiczba = Integer.parseInt(kluczWartosc);
-                String text = textAreaSzyfr.getText();
-                String ukryty = SzyfrCezara.szyfruj(kluczLiczba, text);
-                textAreaSzyfrowanie.setText(ukryty);
+                try {
+                    String kluczWartosc = textSzyfr.getText();
+                    int kluczLiczba = Integer.parseInt(kluczWartosc);
+                    String text = textAreaSzyfr.getText();
+                    ukryty = SzyfrCezara.szyfruj(kluczLiczba, text);
+                    if (text.isEmpty()) {
+                        textAreaSzyfrowanie.setText("Najpierw coś napisz");
+                    } else {
+                        textAreaSzyfrowanie.setText(ukryty);
+                    }
+                } catch (NumberFormatException exception) {
+                    JOptionPane.showMessageDialog(pMain, "Podaj poprawny klucz do szyfru (Liczbe)");
+                }
+            }
+        });
+        zapiszDoPlikuButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String uzytkownikSciezka = System.getProperty("user.home") + File.separator + "Desktop";
+                File plik = new File(uzytkownikSciezka, "zaszyfroawanaWiadomość.txt");
+                try {
+                    if (!plik.exists()) {
+                        boolean nowyPlik = plik.createNewFile();
+                    }
+                    try (FileWriter zapisDoPliku = new FileWriter(plik, true)) {
+                        zapisDoPliku.write(ukryty);
+                    }
+                    JOptionPane.showMessageDialog(pMain, "Zapisano na Pulpicie");
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
             }
         });
     }
