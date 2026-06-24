@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Szyfrowanie">
+  <grid id="27dc6" binding="pMain" layout-manager="GridLayoutManager" row-count="6" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="5" left="15" bottom="10" right="15"/>
+    <constraints>
+      <xy x="20" y="20" width="580" height="537"/>
+    </constraints>
+    <properties>
+      <background color="-5991578"/>
+      <foreground color="-16777216"/>
+    </properties>
+    <border type="line" title="Szyfrowanie" title-justification="2">
+      <title-color color="-16777216"/>
+      <color color="-16777216"/>
+    </border>
+    <children>
+      <component id="d6481" class="javax.swing.JLabel" binding="wpiszTekstLabel">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="1" use-parent-layout="false">
+            <minimum-size width="100" height="16"/>
+            <preferred-size width="150" height="36"/>
+          </grid>
+        </constraints>
+        <properties>
+          <foreground color="-16777216"/>
+          <horizontalAlignment value="10"/>
+          <horizontalTextPosition value="10"/>
+          <labelFor value="50bfc"/>
+          <text value="Wpisz tekst"/>
+        </properties>
+      </component>
+      <component id="32fdc" class="javax.swing.JTextField" binding="textSzyfr">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="34"/>
+            <maximum-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-2763871"/>
+          <foreground color="-16777216"/>
+          <horizontalAlignment value="2"/>
+        </properties>
+      </component>
+      <component id="64625" class="javax.swing.JLabel" binding="wpiszSzyfrLabel">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="5" vsize-policy="0" hsize-policy="0" anchor="8" fill="2" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="17"/>
+            <maximum-size width="160" height="36"/>
+          </grid>
+        </constraints>
+        <properties>
+          <foreground color="-16777216"/>
+          <text value="Wpisz szyfr"/>
+        </properties>
+      </component>
+      <component id="e954" class="javax.swing.JButton" binding="btnSZyfr">
+        <constraints>
+          <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <horizontalAlignment value="0"/>
+          <horizontalTextPosition value="0"/>
+          <text value="Szyfruj"/>
+        </properties>
+      </component>
+      <component id="b7a0" class="javax.swing.JButton" binding="zapiszDoPlikuButton" default-binding="true">
+        <constraints>
+          <grid row="5" column="4" row-span="1" col-span="1" vsize-policy="4" hsize-policy="3" anchor="9" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="192" height="34"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value="Zapisz do pliku"/>
+        </properties>
+      </component>
+      <component id="3ccfe" class="javax.swing.JTextArea" binding="textAreaSzyfrowanie">
+        <constraints>
+          <grid row="4" column="4" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="9" fill="0" indent="0" use-parent-layout="false">
+            <minimum-size width="100" height="100"/>
+            <preferred-size width="192" height="201"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-2763871"/>
+          <editable value="false"/>
+          <foreground color="-16777216"/>
+          <lineWrap value="true"/>
+        </properties>
+      </component>
+      <component id="50bfc" class="javax.swing.JTextArea" binding="textAreaSzyfr">
+        <constraints>
+          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="9" fill="0" indent="0" use-parent-layout="false">
+            <minimum-size width="100" height="100"/>
+            <preferred-size width="200" height="200"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-2763871"/>
+          <foreground color="-16777216"/>
+          <lineWrap value="true"/>
+        </properties>
+      </component>
+      <component id="4857" class="javax.swing.JLabel" binding="twójZaszyfrowanyTekstLabel">
+        <constraints>
+          <grid row="3" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <foreground color="-16777216"/>
+          <text value="Twój zaszyfrowany tekst"/>
+        </properties>
+      </component>
+      <hspacer id="b7621">
+        <constraints>
+          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </hspacer>
+    </children>
+  </grid>
+</form>
